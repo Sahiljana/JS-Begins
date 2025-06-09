@@ -61,4 +61,23 @@ console.log(Object.entries(tinderUser));
 console.log(tinderUser.hasOwnProperty('isLoggedin'))
 
 
+// -------> Object destructuring is a syntax that allows you to extract properties from an object and assign them to variables in a concise way.
+
+const course ={
+    coursename: "DSA",
+    price: 999,
+    courseInstructor: "Sahil"
+}
+
+course.courseInstructor // one way of accesing
+// but we can also do it by :
+
+const {courseInstructor} = course
+//        instance          object
+console.log(courseInstructor);
+
+//also renaming can be done
+const {coursename : co} = course //aise {} jahaan dikh jaaye wahaan destructuring karna h
+console.log(co);
+
 
