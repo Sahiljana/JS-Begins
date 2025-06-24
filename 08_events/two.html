@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CHai and code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout() ek asynchronous function hai jo kisi function ko delay ke baad execute karta hai.
+    //setTimeout(callbackFunction, delayInMilliseconds);
+//    setTimeout(function(){
+//        console.log("Sahil")
+  //  },2000)
+
+  const saySahil = function(){
+    console.log("Sahil")
+  }
+
+  setTimeout(saySahil, 2000) // give reference jab alag function h
+
+  // upar waala 2 second baad output de dega
+
+  const changeText = function(){
+    document.querySelector('h1').innerHTML = "Best Javascript Series"
+  }
+
+ // setTimeout(changeText,2000) // 2 second baad text change ho jayega
+
+  //clearTimeout() use hota hai setTimeout() ko cancel karne ke liye, agar wo abhi tak execute nahi hua ho.
+
+  const changeMe = setTimeout(changeText, 2000)
+
+  document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log("STOPPED")
+  }) // 2 second se pehle ab click karenge toh wo stop ho jayega
+</script>
+</html>
