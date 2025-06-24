@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    //Ek XHR object banaya gaya — isse hum request bhej paayenge.
+
+
+    xhr.open('GET', requestURL) // request bheji 
+    //GET method ka use ho raha hai, jo server se data laata hai.
+    //URL diya gaya — ye request is URL pe jaayegi.
+
+
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState) // readyState batata hai request kis stage pe hai
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.
+            responseText)
+            // yahaan JSON.parse isliye kiya kyu ki data ek string return kar rha tha aur humei object chahiye tha warna undefined show ho rha tha data.followers mei
+            console.log(typeof data)
+            console.log(data.followers)
+        }
+    }
+    xhr.send(); //Actual request server ko bhej di jaati hai.
+
+</script>
+</html>
+
+
+
+
+<!--  V8 Engine
+V8 ek JavaScript Engine hai jo Google ne banaya hai.
+Ye browser (jaise Chrome) aur tools (jaise Node.js) ke andar chhupa hota hai aur JavaScript ko machine code me convert karta hai taaki fast run ho.
+
+🔧 Simple Definition:
+V8 ek C++ me likha hua engine hai jo JavaScript ko directly machine-level code me convert karta hai JIT (Just-In-Time) compilation ke through.
+
+console.log isse hi aaya h
+-->
