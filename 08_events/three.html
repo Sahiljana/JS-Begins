@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CHai and JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval() ek asynchronous function hai jo ek function ko bar-bar repeat karta hai, har fixed time delay ke baad.
+    // setTimeout jaisa hi bass difference yeh h ki wo ek baar hi execute hota h aur yeh baar baar given time ke baad
+    //const intervalID = setInterval(callback, delay);
+
+    const sayDate = function (str) {
+        console.log(str, Date.now());
+    }
+    //setInterval(sayDate,1000, "hi")
+    // ismei 3rd parameter bhi hota h
+
+    const sayHello = function () {
+        console.log("Hello World");
+    }
+
+    let intervalId; // to store the setInterval ID
+
+    document.querySelector('#start').addEventListener('click', function () {
+        intervalId = setInterval(sayHello, 1000);
+    });
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(intervalId);
+        console.log("Stopped");
+    });
+
+    
+
+
+</script>
+
+</html>
